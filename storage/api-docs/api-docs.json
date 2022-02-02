@@ -1,0 +1,602 @@
+{
+    "openapi": "3.0.0",
+    "info": {
+        "title": "DAS API",
+        "description": "",
+        "version": "1.0.0"
+    },
+    "paths": {
+        "/api/auth/login": {
+            "post": {
+                "tags": [
+                    "Authentication"
+                ],
+                "summary": "Login user",
+                "operationId": "8dcb70df1020986038d098cc08d05dae",
+                "requestBody": {
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "properties": {
+                                    "email": {
+                                        "type": "string"
+                                    },
+                                    "password": {
+                                        "type": "string"
+                                    }
+                                },
+                                "type": "object",
+                                "example": {
+                                    "email": "mcglynn.emory@example.net",
+                                    "password": "password"
+                                }
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "200": {
+                        "description": "Login user"
+                    },
+                    "500": {
+                        "description": "Something when wrong"
+                    },
+                    "401": {
+                        "description": "Unauthorized"
+                    }
+                }
+            }
+        },
+        "/api/auth/logout": {
+            "get": {
+                "tags": [
+                    "Authentication"
+                ],
+                "summary": "Logout user",
+                "operationId": "a8dd056be3e98a38c657f73ed6cdef2d",
+                "responses": {
+                    "200": {
+                        "description": "Logout user"
+                    },
+                    "500": {
+                        "description": "Something when wrong"
+                    },
+                    "401": {
+                        "description": "Unauthorized"
+                    }
+                },
+                "security": [
+                    {
+                        "bearerAuth": []
+                    }
+                ]
+            }
+        },
+        "/api/events": {
+            "get": {
+                "tags": [
+                    "Events"
+                ],
+                "summary": "Display events",
+                "operationId": "7058ab7c89d20c752b6afd6d808f6526",
+                "responses": {
+                    "200": {
+                        "description": "Display all events"
+                    },
+                    "500": {
+                        "description": "Something when wrong"
+                    }
+                },
+                "security": [
+                    {
+                        "bearerAuth": []
+                    }
+                ]
+            },
+            "post": {
+                "tags": [
+                    "Events"
+                ],
+                "summary": "Store event",
+                "operationId": "508895e03d7f10edac84357084c87b20",
+                "requestBody": {
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "properties": {
+                                    "id": {
+                                        "type": "string"
+                                    },
+                                    "patient": {
+                                        "type": "string"
+                                    },
+                                    "treatment": {
+                                        "type": "string"
+                                    },
+                                    "start_date": {
+                                        "type": "string"
+                                    },
+                                    "stat_hour": {
+                                        "type": "string"
+                                    },
+                                    "end_date": {
+                                        "type": "string"
+                                    },
+                                    "end_hour": {
+                                        "type": "string"
+                                    },
+                                    "notes": {
+                                        "type": "string"
+                                    }
+                                },
+                                "type": "object",
+                                "example": {
+                                    "id": "4ed6914e-eff9-3b61-b0b0-6498f77a35f0",
+                                    "patient": "Javier",
+                                    "treatment": "Caries",
+                                    "start_date": "12-12-2022",
+                                    "start_hour": "12:00",
+                                    "end_date": "12-12-2022",
+                                    "end_hour": "13:00",
+                                    "notes": ""
+                                }
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "200": {
+                        "description": "Store event"
+                    },
+                    "500": {
+                        "description": "Something when wrong"
+                    }
+                },
+                "security": [
+                    {
+                        "bearerAuth": []
+                    }
+                ]
+            }
+        },
+        "/api/events/{id}": {
+            "get": {
+                "tags": [
+                    "Events"
+                ],
+                "summary": "Display event",
+                "operationId": "6f743f71f7a88dbe57be1d9c9ebf47cb",
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "required": true
+                    },
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "required": true
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Display an specific event"
+                    },
+                    "500": {
+                        "description": "Something when wrong"
+                    }
+                },
+                "security": [
+                    {
+                        "bearerAuth": []
+                    }
+                ]
+            },
+            "put": {
+                "tags": [
+                    "Events"
+                ],
+                "summary": "Update event",
+                "operationId": "fb130dcf1ab4d7abbd3a173741df1f8f",
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "required": true
+                    }
+                ],
+                "requestBody": {
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "properties": {
+                                    "id": {
+                                        "type": "string"
+                                    },
+                                    "patient": {
+                                        "type": "string"
+                                    },
+                                    "treatment": {
+                                        "type": "string"
+                                    },
+                                    "start_date": {
+                                        "type": "string"
+                                    },
+                                    "stat_hour": {
+                                        "type": "string"
+                                    },
+                                    "end_date": {
+                                        "type": "string"
+                                    },
+                                    "end_hour": {
+                                        "type": "string"
+                                    },
+                                    "notes": {
+                                        "type": "string"
+                                    }
+                                },
+                                "type": "object",
+                                "example": {
+                                    "id": "4ed6914e-eff9-3b61-b0b0-6498f77a35f0",
+                                    "patient": "Javier",
+                                    "treatment": "Caries",
+                                    "start_date": "12-12-2022",
+                                    "start_hour": "12:00",
+                                    "end_date": "12-12-2022",
+                                    "end_hour": "13:00",
+                                    "notes": ""
+                                }
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "200": {
+                        "description": "Update event"
+                    },
+                    "500": {
+                        "description": "Something when wrong"
+                    }
+                },
+                "security": [
+                    {
+                        "bearerAuth": []
+                    }
+                ]
+            },
+            "delete": {
+                "tags": [
+                    "Events"
+                ],
+                "summary": "Delete event",
+                "operationId": "b8c8f4b41a32532f5e9f7146e511bc61",
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "required": true
+                    }
+                ],
+                "responses": {
+                    "204": {
+                        "description": "Delete event"
+                    },
+                    "500": {
+                        "description": "Something when wrong"
+                    }
+                },
+                "security": [
+                    {
+                        "bearerAuth": []
+                    }
+                ]
+            }
+        },
+        "/api/patients": {
+            "get": {
+                "tags": [
+                    "Patients"
+                ],
+                "summary": "Display patients",
+                "operationId": "4a397b69598fdd620ee7120b8610185b",
+                "responses": {
+                    "200": {
+                        "description": "Display all patients"
+                    },
+                    "500": {
+                        "description": "Something when wrong"
+                    }
+                },
+                "security": [
+                    {
+                        "bearerAuth": []
+                    }
+                ]
+            },
+            "post": {
+                "tags": [
+                    "Patients"
+                ],
+                "summary": "Store patient",
+                "operationId": "d81c0f99b503153ba6d47c7899a882a4",
+                "requestBody": {
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "properties": {
+                                    "id": {
+                                        "type": "string"
+                                    },
+                                    "name": {
+                                        "type": "string"
+                                    },
+                                    "second_name": {
+                                        "type": "string"
+                                    },
+                                    "last_name": {
+                                        "type": "string"
+                                    },
+                                    "birthday": {
+                                        "type": "string"
+                                    },
+                                    "street": {
+                                        "type": "string"
+                                    },
+                                    "street_number": {
+                                        "type": "string"
+                                    },
+                                    "interior_number": {
+                                        "type": "string"
+                                    },
+                                    "settlement": {
+                                        "type": "string"
+                                    },
+                                    "zip_code": {
+                                        "type": "integer"
+                                    },
+                                    "country": {
+                                        "type": "string"
+                                    },
+                                    "state": {
+                                        "type": "string"
+                                    },
+                                    "city": {
+                                        "type": "string"
+                                    },
+                                    "phone_number": {
+                                        "type": "string"
+                                    },
+                                    "cell_number": {
+                                        "type": "string"
+                                    },
+                                    "email": {
+                                        "type": "string"
+                                    },
+                                    "kind_patient": {
+                                        "type": "string"
+                                    }
+                                },
+                                "type": "object",
+                                "example": {
+                                    "id": "4ed6914e-eff9-3b61-b0b0-6498f77a35f0",
+                                    "name": "Javier",
+                                    "second_name": "Sanchez",
+                                    "last_name": "Miroslava",
+                                    "birthday": "24-07-1995",
+                                    "street": "Diego Hernandez Topete",
+                                    "street_number": "71",
+                                    "interior_number": "",
+                                    "settlement": "Primo Tapia",
+                                    "zip_code": "58000",
+                                    "country": "Mexico",
+                                    "state": "Michoacan",
+                                    "city": "Morelia",
+                                    "phone_number": "5555555555",
+                                    "cell_number": "5555555555",
+                                    "email": "jgutierrez@net.com",
+                                    "kind_patient": "Ortodoncia"
+                                }
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "200": {
+                        "description": "Store patient"
+                    },
+                    "500": {
+                        "description": "Something when wrong"
+                    }
+                },
+                "security": [
+                    {
+                        "bearerAuth": []
+                    }
+                ]
+            }
+        },
+        "/api/patients/{id}": {
+            "get": {
+                "tags": [
+                    "Patients"
+                ],
+                "summary": "Display patient",
+                "operationId": "0feecbcd5339fb70ce3f9af002812b77",
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "required": true
+                    },
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "required": true
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Display an specific patient"
+                    },
+                    "500": {
+                        "description": "Something when wrong"
+                    }
+                },
+                "security": [
+                    {
+                        "bearerAuth": []
+                    }
+                ]
+            },
+            "put": {
+                "tags": [
+                    "Patients"
+                ],
+                "summary": "Update patient",
+                "operationId": "6b907428b808fd0fbcc6268f9ab634ba",
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "required": true
+                    }
+                ],
+                "requestBody": {
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "properties": {
+                                    "id": {
+                                        "type": "string"
+                                    },
+                                    "name": {
+                                        "type": "string"
+                                    },
+                                    "second_name": {
+                                        "type": "string"
+                                    },
+                                    "last_name": {
+                                        "type": "string"
+                                    },
+                                    "birthday": {
+                                        "type": "string"
+                                    },
+                                    "street": {
+                                        "type": "string"
+                                    },
+                                    "street_number": {
+                                        "type": "string"
+                                    },
+                                    "interior_number": {
+                                        "type": "string"
+                                    },
+                                    "settlement": {
+                                        "type": "string"
+                                    },
+                                    "zip_code": {
+                                        "type": "integer"
+                                    },
+                                    "country": {
+                                        "type": "string"
+                                    },
+                                    "state": {
+                                        "type": "string"
+                                    },
+                                    "city": {
+                                        "type": "string"
+                                    },
+                                    "phone_number": {
+                                        "type": "string"
+                                    },
+                                    "cell_number": {
+                                        "type": "string"
+                                    },
+                                    "email": {
+                                        "type": "string"
+                                    },
+                                    "kind_patient": {
+                                        "type": "string"
+                                    }
+                                },
+                                "type": "object",
+                                "example": {
+                                    "id": "4ed6914e-eff9-3b61-b0b0-6498f77a35f0",
+                                    "name": "Javier",
+                                    "second_name": "Sanchez",
+                                    "last_name": "Miroslava",
+                                    "birthday": "24-07-1995",
+                                    "street": "Diego Hernandez Topete",
+                                    "street_number": "71",
+                                    "interior_number": "",
+                                    "settlement": "Primo Tapia",
+                                    "zip_code": "58000",
+                                    "country": "Mexico",
+                                    "state": "Michoacan",
+                                    "city": "Morelia",
+                                    "phone_number": "5555555555",
+                                    "cell_number": "5555555555",
+                                    "email": "jgutierrez@net.com",
+                                    "kind_patient": "Ortodoncia"
+                                }
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "200": {
+                        "description": "Update patient"
+                    },
+                    "500": {
+                        "description": "Something when wrong"
+                    }
+                },
+                "security": [
+                    {
+                        "bearerAuth": []
+                    }
+                ]
+            },
+            "delete": {
+                "tags": [
+                    "Patients"
+                ],
+                "summary": "Delete patient",
+                "operationId": "2a1632c6f39f39a43a35f002e573e3d1",
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "required": true
+                    }
+                ],
+                "responses": {
+                    "204": {
+                        "description": "Delete patient"
+                    },
+                    "500": {
+                        "description": "Something when wrong"
+                    }
+                },
+                "security": [
+                    {
+                        "bearerAuth": []
+                    }
+                ]
+            }
+        }
+    },
+    "components": {
+        "securitySchemes": {
+            "bearerAuth": {
+                "type": "http",
+                "name": "bearerAuth",
+                "in": "header",
+                "bearerFormat": "JWT",
+                "scheme": "bearer"
+            }
+        }
+    },
+    "security": [
+        []
+    ]
+}
