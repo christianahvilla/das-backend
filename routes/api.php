@@ -3,6 +3,7 @@
 use App\Http\Controllers\AuthController;
 use App\Http\Controllers\EventController;
 use App\Http\Controllers\PatientController;
+use App\Http\Middleware\Authenticate;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -23,7 +24,7 @@ Route::group(['prefix' => 'auth'], function () {
     });
 });
 
-Route::middleware(['api'])->group(
+Route::middleware('auth:api')->group(
     function () {
         Route::group(['prefix' => 'events'] , function(){
             Route::get('/', [EventController::class, 'index']);

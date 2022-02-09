@@ -26,11 +26,12 @@ class StoreEventRequest extends FormRequest
             'id' => 'required|string|max:36',
             'patient' => 'required|string|max:36',
             'treatment' => 'required|string|max:36',
-            'start_date' => 'required|string|max:8',
-            'start_hour' => 'required|string|max:8',
-            'end_date' => 'required|string|max:5',
+            'start_date' => 'required|string|max:10',
+            'start_hour' => 'required|string|max:5',
+            'end_date' => 'required|string|max:10',
             'end_hour' => 'required|string|max:5',
-            'notes' => 'required|string',
+            'notes' => 'string|nullable',
+            'color' => 'string'
         ];
     }
 }

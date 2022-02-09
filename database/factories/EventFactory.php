@@ -25,10 +25,11 @@ class EventFactory extends Factory
             'id' => $this->faker->uuid,
             'patient' => $this->faker->name,
             'treatment' => $this->faker->sentence,
-            'start_date' => $this->faker->date($format = 'Y-m-d', $max = 'now'), // '1979-06-09'
+            'start_date' => $this->faker->dateTimeBetween($startDate= '-1 week', $endDate = '+1 week')->format('m/d/Y'), // '1979-06-09'
             'start_hour' => $this->faker->time($format = 'H:i', $max = 'now'), // '20:49'
-            'end_date' => $this->faker->date($format = 'Y-m-d', $max = 'now'), // '1979-06-09'
+            'end_date' => $this->faker->dateTimeBetween($startDate= '-1 week', $endDate = '+1 week')->format('m/d/Y'), // '1979-06-09'
             'end_hour' => $this->faker->time($format = 'H:i', $max = 'now'), // '20:49'
+            'color' => 'violet',
             'notes' => $this->faker->text
         ];
     }

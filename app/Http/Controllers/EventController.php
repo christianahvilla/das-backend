@@ -112,6 +112,10 @@ class EventController extends Controller
     *                 property="notes",
     *                 type="string"
     *             ),
+    *             @OA\Property(
+    *                 property="color",
+    *                 type="string"
+    *             ),
     *             example=
     *             {
     *                 "id": "4ed6914e-eff9-3b61-b0b0-6498f77a35f0",
@@ -122,6 +126,7 @@ class EventController extends Controller
     *                 "end_date": "12-12-2022",
     *                 "end_hour": "13:00",
     *                 "notes": "",
+    *                 "color": "violet",
     *             }
     *           )
     *       )
@@ -189,6 +194,10 @@ class EventController extends Controller
     *                 property="notes",
     *                 type="string"
     *             ),
+    *             @OA\Property(
+    *                 property="color",
+    *                 type="string"
+    *             ),
     *             example=
     *             {
     *                 "id": "4ed6914e-eff9-3b61-b0b0-6498f77a35f0",
@@ -199,6 +208,7 @@ class EventController extends Controller
     *                 "end_date": "12-12-2022",
     *                 "end_hour": "13:00",
     *                 "notes": "",
+    *                 "color": "violet",
     *             }
     *           )
     *       )

@@ -16,6 +16,12 @@ return [
     'name' => env('APP_NAME', 'Laravel'),
 
     /*
+    Date Format
+    */
+    'date_format' => 'd/m/Y',
+    'date_format_javascript' => 'DD/MM/YYYY',
+
+    /*
     |--------------------------------------------------------------------------
     | Application Environment
     |--------------------------------------------------------------------------
@@ -180,6 +186,7 @@ return [
          */
         App\Providers\RepositoryServiceProvider::class,
         App\Providers\FakerServiceProvider::class,
+        Laravel\Passport\PassportServiceProvider::class,
 
     ],
 

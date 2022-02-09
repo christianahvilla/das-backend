@@ -127,6 +127,9 @@
                                     },
                                     "notes": {
                                         "type": "string"
+                                    },
+                                    "color": {
+                                        "type": "string"
                                     }
                                 },
                                 "type": "object",
@@ -138,7 +141,8 @@
                                     "start_hour": "12:00",
                                     "end_date": "12-12-2022",
                                     "end_hour": "13:00",
-                                    "notes": ""
+                                    "notes": "",
+                                    "color": "violet"
                                 }
                             }
                         }
@@ -233,6 +237,9 @@
                                     },
                                     "notes": {
                                         "type": "string"
+                                    },
+                                    "color": {
+                                        "type": "string"
                                     }
                                 },
                                 "type": "object",
@@ -244,7 +251,8 @@
                                     "start_hour": "12:00",
                                     "end_date": "12-12-2022",
                                     "end_hour": "13:00",
-                                    "notes": ""
+                                    "notes": "",
+                                    "color": "violet"
                                 }
                             }
                         }
