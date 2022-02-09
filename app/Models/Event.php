@@ -21,5 +21,6 @@ class Event extends Model
         'end_date',
         'end_hour',
         'notes',
+        'color',
     ];
 }

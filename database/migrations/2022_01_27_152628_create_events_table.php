@@ -18,10 +18,11 @@ class CreateEventsTable extends Migration
             $table->string('patient');
             $table->string('treatment');
             $table->string('start_date');
-            $table->string('start_hour');
+            $table->string('start_hour')    ;
             $table->string('end_date');
             $table->string('end_hour');
-            $table->text('notes');
+            $table->string('color')->default('violet');
+            $table->text('notes')->nullable();
             $table->timestamps();
         });
     }
